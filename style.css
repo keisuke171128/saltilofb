@@ -1,3 +1,9 @@
+.content-img-wrapper {
+	text-align: center;
+}
+.content-box-wrap {
+	padding: 0 10px;
+}
 .entry-title a,.entry-cat a {
 	color: #535a5a !important;
 }
@@ -1723,6 +1729,9 @@ div[itemprop="description"] {
 }
 /*sumaho*/
 @media screen and (max-width: 750px) {
+	.content-img-wrapper img {
+		width: 95%;
+	}
 	.sites-branding {
 		background: linear-gradient(125deg, #009, #f00) fixed, url(http://saltilofb.wp.xdomain.jp/wp-content/uploads/2017/12/tp.jpg);
 		background-repeat: no-repeat;

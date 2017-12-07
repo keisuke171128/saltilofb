@@ -20,30 +20,51 @@ get_header(); ?>
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a>
           </div><!-- .entry-datetop -->
 
+          <div class="content-youtube">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/<?  
+            $txt = get_field('youtubeurl');
+            if($txt){ ?><? echo $txt; ?>
+            <? } ?>" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+          </div>
+          <div class="content-box-wrap">
+            <p>フィードバック者：<br>
+              <?  
+              $txt = get_field('whofeedback');
+              if($txt){ ?><? echo $txt; ?>
+              <? } ?>
+            </p>
 
-          <p>ここにコンテンツ</p>
-          
+            <!-- ループ開始 -->
+            <?php
+            $group_set = SCF::get( 'feedbackbox' );
+            foreach ( $group_set as $field_name => $field_value ) {
+              ?>
+              <h4>井野圭輔くん</h4>
+              <p><?php echo esc_html( $field_value['fbtext'] ); ?></p>
+              <?php } ?>
+            </div>
 
-        </header><!-- .entry-header -->
 
-        <div class="entry-summary">
-          <?php the_excerpt(); ?>
-        </div><!-- .entry-excerpt -->
+          </header><!-- .entry-header -->
 
-      </article><!-- #post-## -->
+          <div class="entry-summary">
+            <?php the_excerpt(); ?>
+          </div><!-- .entry-excerpt -->
 
-      <?php
+        </article><!-- #post-## -->
+
+        <?php
 				// If comments are open or we have at least one comment, load up the comment template.
-      if ( comments_open() || get_comments_number() ) :
-       comments_template();
-     endif;
-     ?>
-     <?php the_post_navigation( array( 'next_text' => __( '<span class="meta-nav">Next Post</span> %title', 'anissa' ), 'prev_text' => __( '<span class="meta-nav">Previous Post</span> %title', 'anissa' ) ) ); ?>
-   <?php endwhile; // End of the loop. ?>
- </main>
- <!-- #main --> 
-</div>
-<!-- #primary -->
+        if ( comments_open() || get_comments_number() ) :
+         comments_template();
+       endif;
+       ?>
+       <?php the_post_navigation( array( 'next_text' => __( '<span class="meta-nav">Next Post</span> %title', 'anissa' ), 'prev_text' => __( '<span class="meta-nav">Previous Post</span> %title', 'anissa' ) ) ); ?>
+     <?php endwhile; // End of the loop. ?>
+   </main>
+   <!-- #main --> 
+ </div>
+ <!-- #primary -->
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+ <?php get_sidebar(); ?>
+ <?php get_footer(); ?>

@@ -19,11 +19,11 @@ get_header(); ?>
           <div class="entry-datetop">
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a>
           </div><!-- .entry-datetop -->
-          <?php if ( has_post_thumbnail() ) : ?>
-            <div class="featured-image">
-              <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'anissa-home' ); ?></a>         
-            </div>
-          <?php endif; ?>
+
+
+          <p>ここにコンテンツ</p>
+          
+
         </header><!-- .entry-header -->
 
         <div class="entry-summary">

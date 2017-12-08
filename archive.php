@@ -41,5 +41,19 @@ get_header(); ?>
 </div>
 <!-- #primary -->
 
+<div class="player-box-wrapper">
+    <div class="player-box">
+      <h3>Member</h3>
+      <div class="player-item">
+        <?php
+        $terms = get_terms('player');
+        foreach ( $terms as $term ) {
+          echo '<a href="'.get_term_link($term).'">'.$term->name.'</a>';
+        }
+        ?>
+      </div>
+    </div>
+  </div>
+
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

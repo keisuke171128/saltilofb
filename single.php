@@ -27,20 +27,22 @@ get_header(); ?>
             <? } ?>" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
           </div>
           <div class="content-box-wrap">
-            <p>フィードバック者：<br>
+            <p class="single-who-title">フィードバック者：
               <?  
               $txt = get_field('whofeedback');
               if($txt){ ?><? echo $txt; ?>
               <? } ?>
             </p>
-
+            <h3 class="single-fb-title">Feed Back:</h3>
             <!-- ループ開始 -->
             <?php
             $group_set = SCF::get( 'feedbackbox' );
             foreach ( $group_set as $field_name => $field_value ) {
               ?>
-              <h4>井野圭輔くん</h4>
-              <p><?php echo esc_html( $field_value['fbtext'] ); ?></p>
+              <div class="single-content-box">
+                <h4><?php echo esc_html( $field_value['fbplayer'] ); ?></h4>
+                <p><?php echo nl2br($field_value['fbtext']); ?></p>
+              </div>
               <?php } ?>
             </div>
 
@@ -65,6 +67,20 @@ get_header(); ?>
    <!-- #main --> 
  </div>
  <!-- #primary -->
+
+ <div class="player-box-wrapper">
+    <div class="player-box">
+      <h3>Member</h3>
+      <div class="player-item">
+        <?php
+        $terms = get_terms('player');
+        foreach ( $terms as $term ) {
+          echo '<a href="'.get_term_link($term).'">'.$term->name.'</a>';
+        }
+        ?>
+      </div>
+    </div>
+  </div>
 
  <?php get_sidebar(); ?>
  <?php get_footer(); ?>

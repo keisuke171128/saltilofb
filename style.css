@@ -1,8 +1,62 @@
+.content-youtube {
+	text-align: center;
+}
+.member-page-top h2 {
+	text-align: center;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #80808061;
+}
+.member-page-content p a {
+	color: #504d4d;
+}
+.member-page-content p:first-child {
+	background-color: #00c4b7;
+	padding: 5px 0;
+}
+.member-page-content p {
+	text-align: center;
+}
+iframe {
+	max-width: 100%;
+	height: auto;
+	margin:  auto;
+	text-align: center;
+}
+.single-content-box p {
+	line-height: 27px;
+}
+.single-who-title {
+	color: #02a591;
+}
+.single-fb-title {
+	margin: 0 0 10px 0;
+
+}
+.single-content-box {
+	padding: 10px;
+	border-bottom: 1px solid gray;
+}
+.single-content-box:nth-child(odd) {
+	/*background-color: #e6e6e682;*/
+}
+.single-content-box h4 {
+	margin: 5px 0 5px 0;
+	font-weight: bold;
+}
+.single-content-box p {
+	margin: 3px 0;
+}
+.menu-topmenu-container ul li a,.site-info p a {
+	color: #303233;
+}
+.comment-form-email,.comment-form-url,.comment-notes {
+	display: none;
+}
 .content-img-wrapper {
 	text-align: center;
 }
 .content-box-wrap {
-	padding: 0 10px;
+	padding: 10px;
 }
 .entry-title a,.entry-cat a {
 	color: #535a5a !important;
@@ -1844,7 +1898,7 @@ div[itemprop="description"] {
 		font-size: 24px;
 	}
 	h4 {
-		font-size: 16px;
+		/*		font-size: 16px;*/
 	}
 	h5 {
 		font-size: 13px;
